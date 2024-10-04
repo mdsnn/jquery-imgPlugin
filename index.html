@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview Plugin</title>
+    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>jQuery: imgPreview</h2>
+
+        <!-- 01/10/24 MS: Settings for selecting the position of the preview -->
+        <div class="settings">
+            <label for="previewPosition">Preview Position:</label>
+            <select id="previewPosition">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="top">Top</option>
+                <option value="down">Down</option>
+            </select>
+        </div>
+
+        <ul>
+            <li>
+                <img src="img/Sun.jpg" alt="The Sun" class="thumbnail">
+                <a href="img/Sun.jpg">The Sun</a>
+            </li>
+            <li>
+                <img src="img/ny.jpg" alt="New York City Skyline" class="thumbnail">
+                <a href="img/ny.jpg">New York</a>
+            </li>
+            <li>
+                <img src="img/office.jpg" alt="Office Meeting" class="thumbnail">
+                <a href="img/office.jpg">Office Meeting</a>
+            </li>
+            <li>
+                <img src="img/beach.jpg" alt="A Beach" class="thumbnail">
+                <a href="img/beach.jpg">A Beach</a>
+            </li>
+            <li>
+                <img src="img/tech.jpg" alt="Global Technology" class="thumbnail">
+                <a href="img/tech.jpg">Global Technology</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Image Preview Container -->
+    <div id="imgPreviewContainer">
+        <img id="imgPreview" src="" alt="Image Preview">
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="imgPreview.jquery.js"></script> <!-- External jQuery plugin file -->
+    <script>
+        // Initialize the plugin
+        $(document).ready(function () {
+            $('ul li a').imgPreview({
+                previewContainer: '#imgPreviewContainer',
+                previewImage: '#imgPreview',
+                positionSelector: '#previewPosition'
+            });
+        });
+    </script>
+</body>
+</html>

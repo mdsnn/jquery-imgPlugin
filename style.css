@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+#imgPreviewContainer {
+    background: #fff url(img/loading.gif) no-repeat center;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #1261a0;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    width: 100%; /* 02/10/24 MS: Ensures it takes the full width */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    position: relative; /* 02/10/24 MS: Ensure each item has its own positioning context */
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #1261a0;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #0a5c91;
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* 02/10/24 MS: Responsive Design */
+@media (max-width: 600px) {
+    ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thumbnail {
+        margin-bottom: 10px;
+    }
+}
+
+/* 02/10/24 MS: Style for the image preview */
+#imgPreview {
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* 02/10/24 MS: Style for settings */
+.settings {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.settings label {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.settings select {
+    padding: 5px;
+    font-size: 1rem;
+}
